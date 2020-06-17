@@ -6,7 +6,7 @@ var selMode = "";
 var scale = 1;
 
 function windowResize() {
-    // veld is 1000 x 650 pixels. Moet passen.
+    // veld is 1000 x 650 pixels. Moet passen op het scherm!
     var scaleX = $(window).width() / 1000.0;
     var scaleY = ($(window).height() - 56) / 650.0;
 
@@ -49,12 +49,14 @@ function selectMode(btn) {
     // modus kiezen
     selMode = $(btn).attr("data-mode");
 
-    // maak die ene button "active"
+    // maak die button "active"
     $(".objects button").removeClass("active");
     $(btn).addClass("active");
 }
 
 // Tekenen: fieldDown, fieldMove, fieldUp
+
+// teken nieuwe pijl
 var newArrow = null;
 
 // object die wordt verplaatst
@@ -62,11 +64,12 @@ var selObject = null;
 // oorspronkelijke positie van het object die wordt verplaatst
 var selObjectStartPos = null;
 
-// arrow die wordt verplaatst
+// pijl die wordt verplaatst
 var selArrow = null;
-// oorspronkelijke positie van de arrow die wordt verplaatst
+// oorspronkelijke positie van de pijl die wordt verplaatst
 var selArrowStartPos = null;
 
+// x,y coordinaten van mouseDown
 var firstClick = [0, 0];
 
 function fieldDown(evt) {
@@ -114,7 +117,7 @@ function fieldDown(evt) {
     else {
         var objectSize = 50;
         if (selMode == "ball") {
-            // er mag maar een ball: andere weggooien
+            // er mag maar een ball: andere verwijderen
             $(".addedObject.ball").remove();
             // hockeybal is kleiner
             if (selSport == "Hockey") {
@@ -122,7 +125,7 @@ function fieldDown(evt) {
             }
         }
 
-        // teken het object zodat raakpunt in de midden is
+        // teken het object zodat het raakpunt in het midden is
         $('<div/>', {
             "class": 'addedObject ' + selMode
         }).css({ left: x - objectSize / 2, top: y - objectSize / 2 }).appendTo('#field');
