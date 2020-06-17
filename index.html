@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Sport &amp; Tacktics</title>
+    <link href="lib/bootstrap.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="lib/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="lib/bootstrap.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+  <body onresize="windowResize()">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <a class="navbar-brand" href="#" onclick="backToSelection(this);">S&amp;T</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a id="linkHome" class="nav-link disabled" href="#" onclick="backToSelection(this);">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a id="linkCourt" class="nav-link disabled" href="#" onclick="selectCourt(null);">Court</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle disabled" href="#" id="linkSave" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tactics</a>
+                      <div class="dropdown-menu" aria-labelledby="linkSave">
+                          <a class="dropdown-item" onclick="save();" href="#">Save as...</a>
+                          <a class="dropdown-item" onclick="clean();" href="#">Delete all</a>
+                          <div class="dropdown-divider"></div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <main id="choose" role="main" class="container">
+          <div class="starter-template">
+              <h1>Sport &amp; Tacktics</h1>
+              <p class="lead">First choose your sport field.</p>
+          </div>
+
+          <div class="album py-5">
+              <div class="container">
+                  <div class="row">
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Hockey</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Hockey" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small hockey.png" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Volleyball</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Volleyball" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small volleyball.png" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Basketball</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Basketball" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small basketball.jpg" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Football</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Football" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small football.jpg" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Handball</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Handball" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small handball.jpg" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="col-md-4">
+                          <div class="card mb-4 shadow-sm">
+                              <div class="card-body">
+                                  <p class="card-text">Korfball</p>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="btn-group">
+                                          <button data-sport="Korfball" type="button" onclick="selectCourt(this);" class="btn btn-sm btn-outline-secondary"><img src="img/small korfball.jpg" class="bd-placeholder-img card-img-top" /></button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </main>
+      <main id="court" class="bg-dark" role="main">
+          <div id="field" onpointerdown="fieldDown(event);" onpointermove="fieldMove(event);" onpointerup="fieldUp(event);">
+              <svg id="fieldSVG" style="width: 100%; height: 100%;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                      <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth" viewBox="0 0 20 20">
+                          <path d="M0,0 L0,6 L9,3 z" fill="white"/>
+                      </marker>
+                  </defs>
+              </svg>
+          </div>
+          <div class="objects">
+              <button type="button" data-mode="move" onclick="selectMode(this);" class="btn btn-secondary">Move</button>
+              <button type="button" data-mode="remove" onclick="selectMode(this);" class="btn btn-secondary">Remove</button>
+              <button type="button" data-mode="removeall" onclick="clearScreen();" class="btn btn-secondary">Remove all</button>
+              <button type="button" data-mode="our" onclick="selectMode(this);" class="btn btn-secondary">Add our player</button>
+              <button type="button" data-mode="their" onclick="selectMode(this);" class="btn btn-secondary">Add their player</button>
+              <button type="button" data-mode="ball" onclick="selectMode(this);" class="btn btn-secondary">Add ball</button>
+              <button type="button" data-mode="arrow" onclick="selectMode(this);" class="btn btn-secondary">Draw arrow</button>
+              <button type="button" data-mode="dasharrow" onclick="selectMode(this);" class="btn btn-secondary">Draw dashed arrow</button>
+          </div>
+      </main>
+  </body>
+</html>

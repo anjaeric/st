@@ -1,0 +1,119 @@
+body {
+    padding-top: 5rem;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.card-text {
+    text-align: center;
+}
+
+#field {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1000px;
+    height: 650px;
+    cursor: pointer;
+    transform-origin: 0 0;
+    touch-action: none;
+}
+
+.objects {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+}
+
+#court {
+    position: absolute;
+    left: 0px;
+    top: 56px;
+    right: 0px;
+    bottom: 0px;
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+    #court[data-sport="Hockey"] {
+        background-image: url('img/small hockey.png');
+    }
+
+    #court[data-sport="Volleyball"] {
+        background-image: url('img/small volleyball.png');
+    }
+
+    #court[data-sport="Basketball"] {
+        background-image: url('img/small basketball.jpg');
+    }
+
+    #court[data-sport="Football"] {
+        background-image: url('img/small football.jpg');
+    }
+
+    #court[data-sport="Handball"] {
+        background-image: url('img/small handball.jpg');
+    }
+
+    #court[data-sport="Korfball"] {
+        background-image: url('img/small korfball.jpg');
+    }
+
+
+.addedObject {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+    .addedObject.their {
+        background-image: url('img/their.png');
+    }
+
+    .addedObject.our {
+        background-image: url('img/our.png');
+    }
+
+#court[data-sport="Hockey"] .addedObject.ball {
+    width: 10px;
+    height: 10px;
+    background-image: url('img/ball hockey.png');
+}
+#court[data-sport="Volleyball"] .addedObject.ball {
+    background-image: url('img/ball volleyball.png');
+}
+#court[data-sport="Basketball"] .addedObject.ball {
+    background-image: url('img/ball basketball.png');
+}
+#court[data-sport="Football"] .addedObject.ball {
+    background-image: url('img/ball football.png');
+}
+#court[data-sport="Handball"] .addedObject.ball {
+    background-image: url('img/ball handball.png');
+}
+#court[data-sport="Korfball"] .addedObject.ball {
+    background-image: url('img/ball korfball.png');
+}
